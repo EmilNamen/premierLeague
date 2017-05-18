@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-def getTopScorers(home, visitor, matrix):
+def getTopScorers(home, visitor, matrix, index):
     topScorers = []
     response = urllib2.urlopen('https://www.premierleague.com/stats')
     html = response.read()
@@ -31,8 +31,8 @@ def getTopScorers(home, visitor, matrix):
 
     for scorer in topScorers:
         if scorer == home:
-            matrix[0] = 1
+            matrix[index][0] = 1
         if scorer == visitor:
-            matrix[1] = 1
+            matrix[index][1] = 1
 
     return matrix

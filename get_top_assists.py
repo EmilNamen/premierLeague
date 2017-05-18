@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-def getTopAssists(home, visitor, matrix):
+def getTopAssists(home, visitor, matrix, index):
     topAssists = []
     response = urllib2.urlopen('https://www.premierleague.com/stats')
     html = response.read()
@@ -29,8 +29,8 @@ def getTopAssists(home, visitor, matrix):
 
     for assist in topAssists:
         if assist == home:
-            matrix[2] = 1
+            matrix[index][6] = 1
         if assist == visitor:
-            matrix[3] = 1
+            matrix[index][7] = 1
 
     return matrix

@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-def getTopSaves(home, visitor, matrix):
+def getTopSaves(home, visitor, matrix, index):
   topSaves = []
   response = urllib2.urlopen('https://www.premierleague.com/stats')
   html = response.read()
@@ -33,8 +33,8 @@ def getTopSaves(home, visitor, matrix):
 
   for save in topSaves:
     if save == home:
-      matrix[4] = 1
+      matrix[index][10] = 1
     if save == visitor:
-      matrix[5] = 1
+      matrix[index][11] = 1
 
   return matrix
