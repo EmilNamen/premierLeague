@@ -2,6 +2,7 @@ from get_top_scorers import getTopScorers
 from get_top_assists import getTopAssists
 from get_top_saves import getTopSaves
 from read_data_pl import readCSV
+from read_data_pl import readnewCSV2015
 from getOutputs import getOutputs
 
 
@@ -16,8 +17,9 @@ inputs = []
 
 
 for i,team in enumerate(homeNamePremierLeagueWebPage):
-    print getTopScorers(team, visitorNamePremierLeagueWebPage[i], matrix, i) #matrix[0] & matrix[1]
-    print getTopAssists(team, visitorNamePremierLeagueWebPage[i], matrix,  i) #matrix[2] & matrix[3]
-    print getTopSaves(team, visitorNamePremierLeagueWebPage[i], matrix, i)   #matrix[4] & matrix[5]
-    for season in seasons:
-        print readCSV(homeNameCSV[i],visitorNameCSV[i],season,matrix,i)
+    #print getTopScorers(team, visitorNamePremierLeagueWebPage[i], matrix, i) #matrix[0] & matrix[1]
+    #print getTopAssists(team, visitorNamePremierLeagueWebPage[i], matrix,  i) #matrix[2] & matrix[3]
+    #print getTopSaves(team, visitorNamePremierLeagueWebPage[i], matrix, i)   #matrix[4] & matrix[5]
+    #for season in seasons:
+        #print readCSV(homeNameCSV[i],visitorNameCSV[i],season,matrix,i)
+    print readnewCSV2015(homeNameCSV[i],visitorNameCSV[i],matrix,i)
